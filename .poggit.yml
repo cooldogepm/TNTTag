@@ -4,7 +4,8 @@ branches:
 - main
 projects:
   TNTTag:
-    path: "assets/icon.png"
+    path: ""
+    icon: "assets/icon.png"
     libs:
       - src: cooldogedev/libSQL/libSQL
         version: ^0.1.1
