@@ -71,6 +71,11 @@ final class Scoreboard extends ScoreboardCache
         return $this->player;
     }
 
+    public function getCache(): ScoreboardCache
+    {
+        return $this->cache;
+    }
+
     public function onUpdate(): void
     {
         if (!$this->player->isConnected()) {
@@ -132,10 +137,5 @@ final class Scoreboard extends ScoreboardCache
         $this->getCache()->setLines($this->lines, false);
 
         parent::setLines($lines);
-    }
-
-    public function getCache(): ScoreboardCache
-    {
-        return $this->cache;
     }
 }
