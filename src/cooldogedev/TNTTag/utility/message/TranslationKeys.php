@@ -50,4 +50,6 @@ final class TranslationKeys
     public const END = "{end}";
 
     public const GRACE = "{grace}";
+
+    public const MESSAGE = "{message}";
 }

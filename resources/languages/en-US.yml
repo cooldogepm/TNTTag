@@ -1,4 +1,7 @@
 ---
+# Configuration version, don't edit this, this is a special token.
+### config-version: 0.0.2 ###
+
 # The messages that are displayed when a player joins/leaves a game.
 player:
   join: "&7{player} &ehas joined! &e(&b{players_count}/{players_max}&e)"
@@ -51,22 +54,30 @@ queue-error:
   message: "&cThere are no available games at the moment, retry later."
   kick: "&cThere are no available games at the moment, retry later."
 
+# The goals that are displayed to players in the scoreboard.
 goals:
   runner: "Run away!"
   tagged: "Tag someone!"
   none: "N/A"
 
+# The command's information.
 command:
   name: "tnttag"
   aliases: ["tt"]
   description: "TNT Tag"
 
+# The custom item names for the hotbar.
 items:
   quit-game: "&r&cQuit Game"
 
   teleporter: "&r&l&aTeleporter"
   play-again: "&r&l&bPlay Again"
   back-to-lobby: "&r&l&cBack to Lobby"
+
+# The formats of the messages that are displayed to players.
+chat:
+  alive: "&7{player}: &f{message}"
+  spectator: "&7[SPECTATOR] {player}: {message}"
 
 # The scoreboard messages.
 scoreboard:

@@ -41,6 +41,7 @@ use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\inventory\InventoryTransactionEvent;
 use pocketmine\event\Listener;
+use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\event\player\PlayerDropItemEvent;
 use pocketmine\event\player\PlayerExhaustEvent;
 use pocketmine\event\player\PlayerItemHeldEvent;
@@ -232,6 +233,36 @@ final class EventListener implements Listener
         if ($session->inGame()) {
             $event->cancel();
         }
+    }
+
+    /**
+     * @ignoreCanceled true
+     * @priority MONITOR
+     */
+    public function onPlayerChat(PlayerChatEvent $event): void
+    {
+        $player = $event->getPlayer();
+        $session = $this->getPlugin()->getSessionManager()->getSession($player->getUniqueId()->getBytes());
+        $game = $session->getGame();
+
+        if ($game === null) {
+            return;
+        }
+
+        $event->setFormat(
+            $session->getState() === Session::PLAYER_STATE_ALIVE ? LanguageManager::translate(LanguageManager::getMessage(KnownMessages::TOPIC_CHAT, KnownMessages::CHAT_ALIVE), [
+                TranslationKeys::PLAYER => $player->getDisplayName(),
+                TranslationKeys::MESSAGE => $event->getMessage(),
+                TranslationKeys::GOAL => $session->getGoal()])
+                :
+                LanguageManager::translate(LanguageManager::getMessage(KnownMessages::TOPIC_CHAT, KnownMessages::CHAT_SPECTATOR), [
+                    TranslationKeys::PLAYER => $player->getDisplayName(),
+                    TranslationKeys::MESSAGE => $event->getMessage()])
+        );
+
+        $recipients = $session->getState() === Session::PLAYER_STATE_ALIVE ? $game->getPlayerManager()->getSessions(null) : $game->getPlayerManager()->getSessions(Session::PLAYER_STATE_SPECTATOR);
+
+        $event->setRecipients(array_map(fn(Session $session) => $session->getPlayer(), $recipients));
     }
 
     /**
