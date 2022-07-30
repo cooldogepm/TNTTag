@@ -35,16 +35,28 @@ use cooldogedev\TNTTag\game\Game;
 use cooldogedev\TNTTag\game\GameManager;
 use cooldogedev\TNTTag\query\QueryManager;
 use cooldogedev\TNTTag\session\SessionManager;
+use cooldogedev\TNTTag\utility\ConfigChecker;
 use cooldogedev\TNTTag\utility\message\LanguageManager;
 use CortexPE\Commando\PacketHooker;
 use pocketmine\plugin\PluginBase;
 use pocketmine\scheduler\ClosureTask;
+use pocketmine\utils\SingletonTrait;
 
 final class TNTTag extends PluginBase
 {
+    use SingletonTrait {
+        setInstance as protected;
+        getInstance as protected _getInstance;
+    }
+
     protected ConnectionPool $connectionPool;
     protected GameManager $gameManager;
     protected SessionManager $sessionManager;
+
+    public static function getInstance(): TNTTag
+    {
+        return TNTTag::_getInstance();
+    }
 
     public function getSessionManager(): SessionManager
     {
@@ -67,6 +79,9 @@ final class TNTTag extends PluginBase
         foreach ($this->getResources() as $resource) {
             $this->saveResource($resource->getFilename());
         }
+
+        ConfigChecker::check($this);
+        TNTTag::setInstance($this);
     }
 
     protected function onEnable(): void
