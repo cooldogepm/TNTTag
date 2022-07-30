@@ -1,0 +1,19 @@
+name: TNTTag
+version: 0.0.1
+api: 4.0.0
+author: cooldogedev
+main: cooldogedev\TNTTag\TNTTag
+website: https://github.com/cooldogedev
+description: "TNTTag minigame"
+permissions:
+  tnttag.subcommand.create:
+    default: op
+  tnttag.subcommand.delete:
+    default: op
+  tnttag.subcommand.list:
+    default: op
+
+  tnttag.subcommand.join:
+    default: true
+  tnttag.subcommand.quit:
+    default: true

@@ -1,0 +1,126 @@
+---
+# The messages that are displayed when a player joins/leaves a game.
+player:
+  join: "&7{player} &ehas joined! &e(&b{players_count}/{players_max}&e)"
+  quit: "&7{player} &ehas quit! &e(&b{players_count}/{players_max}&e)"
+
+# The messages that are displayed to players when they lose.
+lose:
+  title: "&c&lYOU DIED!"
+  subtitle: "&7You are now a spectator"
+  message: "&l&cYou've lost the game"
+
+# The messages that are displayed to players when they win.
+win:
+  title: "&l&6VICTORY!"
+  subtitle: "&7You were the last man standing"
+  message: "&l&aYou've won the game!"
+
+# The messages that are displayed to spectators when the game ends.
+end:
+  title: "&c&lGAME OVER!"
+  subtitle: "&7You weren't victorious this time"
+  message: "&c&lGame over! You weren't victorious this time"
+
+# The messages that are displayed to tagged players.
+tagged:
+  start: "&cYou started as tagged!"
+  tagged: "&7{player} &eIS IT!"
+  explode: "&c{player} blew up"
+
+# The messages that are displayed to players in countdown phase.
+countdown:
+  start: "&eCountdown has started!"
+  stop: "&eCountdown has stopped!"
+  decrement: "&eThe game starts in &c{countdown}"
+
+# The messages that are displayed to players when the game starts.
+start:
+  title: "&l&cRUN!"
+  subtitle: ""
+  message: "&eGame started! &cRUN!"
+
+# The messages that are displayed to players in deathmatch phase.
+deathmatch:
+  title: ""
+  subtitle: "&eDeathmatch has begun!"
+  message: "&eDeathmatch has begun! &cRUN!"
+
+# The messages that are displayed to players when they fail to queue.
+queue-error:
+  message: "&cThere are no available games at the moment, retry later."
+  kick: "&cThere are no available games at the moment, retry later."
+
+goals:
+  runner: "Run away!"
+  tagged: "Tag someone!"
+  none: "N/A"
+
+command:
+  name: "tnttag"
+  aliases: ["tt"]
+  description: "TNT Tag"
+
+items:
+  quit-game: "&r&cQuit Game"
+
+  teleporter: "&r&l&aTeleporter"
+  play-again: "&r&l&bPlay Again"
+  back-to-lobby: "&r&l&cBack to Lobby"
+
+# The scoreboard messages.
+scoreboard:
+  title: "&l&eTNTTAG"
+  body:
+    idle:
+      - ""
+      - "Map: &a{map}"
+      - ""
+      - "Players: &a{players_count}"
+      - ""
+      - "Waiting for players..."
+      - ""
+      - "&ewww.fadhel.dev"
+    countdown:
+      - ""
+      - "Map: &a{map}"
+      - ""
+      - "Players: &a{players_count}"
+      - ""
+      - "Starting in &a{countdown}s"
+      - ""
+      - "&ewww.fadhel.dev"
+    match:
+      - ""
+      - "&7Round #{round}"
+      - ""
+      - "Explosion in &c{explosion}s"
+      - ""
+      - "Goal: &a{goal}"
+      - ""
+      - "Alive: &a{players_count} Players"
+      - ""
+      - "&ewww.fadhel.dev"
+    grace:
+      - ""
+      - "&7Round #{round}"
+      - ""
+      - "Next round in &a{grace}s"
+      - ""
+      - "Goal: &a{goal}"
+      - ""
+      - "Alive: &a{players_count} Players"
+      - ""
+      - "&ewww.fadhel.dev"
+    end:
+      - ""
+      - "&7Rounds #{total_rounds}"
+      - ""
+      - "Ending in &a{end}s"
+      - ""
+      - "Winner: &6{winner}"
+      - ""
+      - "Map: &a{map}"
+      - ""
+      - "&ewww.fadhel.dev"
+...

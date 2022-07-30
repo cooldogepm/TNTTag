@@ -1,0 +1,30 @@
+---
+# Configuration version, don't edit this.
+config-version: 0.0.1
+
+language: en-US
+
+database:
+  # The database provider, mysql or sqlite.
+  provider: sqlite
+  # Number of threads to use for the database query processing, 2 is recommended.
+  threads: 2
+
+  # The database connection information.
+  mysql:
+    host: 127.0.0.1
+    username: your_username
+    password: password
+    schema: db_name
+    port: 3306
+
+  # The database file name.
+  sqlite:
+    file: players.db
+
+behaviour:
+  queue-on-login: false
+  queue-on-game-end: false
+  speed: 0.20
+  explosion-radius: 10
+...
