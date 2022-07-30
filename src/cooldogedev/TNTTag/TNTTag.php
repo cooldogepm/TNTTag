@@ -35,7 +35,7 @@ use cooldogedev\TNTTag\game\Game;
 use cooldogedev\TNTTag\game\GameManager;
 use cooldogedev\TNTTag\query\QueryManager;
 use cooldogedev\TNTTag\session\SessionManager;
-use cooldogedev\TNTTag\utility\ConfigChecker;
+use cooldogedev\TNTTag\utility\ConfigurationsValidator;
 use cooldogedev\TNTTag\utility\message\LanguageManager;
 use CortexPE\Commando\PacketHooker;
 use pocketmine\plugin\PluginBase;
@@ -80,7 +80,7 @@ final class TNTTag extends PluginBase
             $this->saveResource($resource->getFilename());
         }
 
-        ConfigChecker::check($this);
+        ConfigurationsValidator::validate($this);
         TNTTag::setInstance($this);
     }
 

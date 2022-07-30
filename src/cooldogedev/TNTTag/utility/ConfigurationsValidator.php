@@ -6,12 +6,12 @@ namespace cooldogedev\TNTTag\utility;
 
 use cooldogedev\TNTTag\TNTTag;
 
-final class ConfigChecker
+final class ConfigurationsValidator
 {
     protected const TOKEN_CONFIG_VERSION = "config-version";
 
     // TODO: Clean this up
-    public static function check(TNTTag $plugin): void
+    public static function validate(TNTTag $plugin): void
     {
         $config = $plugin->getConfig();
 
@@ -27,14 +27,13 @@ final class ConfigChecker
 
         $languageFile = "languages" . DIRECTORY_SEPARATOR . $config->get("language") . ".yml";
 
-        $tokens = ConfigChecker::getTokens(file_get_contents($plugin->getDataFolder() . $languageFile));
+        $tokens = ConfigurationsValidator::getTokens(file_get_contents($plugin->getDataFolder() . $languageFile));
 
-        if (ConfigChecker::getToken($tokens, ConfigChecker::TOKEN_CONFIG_VERSION) !== $plugin->getDescription()->getVersion()) {
+        if (ConfigurationsValidator::getToken($tokens, ConfigurationsValidator::TOKEN_CONFIG_VERSION) !== $plugin->getDescription()->getVersion()) {
             copy($plugin->getDataFolder() . $languageFile, $plugin->getDataFolder() . $languageFile . ".old");
             $plugin->saveResource($languageFile, true);
             $plugin->getLogger()->warning("Your language file is either outdated or corrupted (has no tokens). It has been backed up to " . $languageFile . ".old");
         }
-        var_dump($tokens);
     }
 
     public static function getTokens(string $content): array
