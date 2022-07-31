@@ -3,7 +3,7 @@ version: 0.0.2
 api: 4.0.0
 author: cooldogedev
 main: cooldogedev\TNTTag\TNTTag
-website: https://github.com/cooldogedev
+website: https://github.com/cooldogedev/TNTTag
 description: "TNTTag minigame"
 permissions:
   tnttag.subcommand.create:
