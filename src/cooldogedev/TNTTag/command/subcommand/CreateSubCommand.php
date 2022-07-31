@@ -36,6 +36,7 @@ use CortexPE\Commando\args\RawStringArgument;
 use CortexPE\Commando\BaseSubCommand;
 use pocketmine\command\CommandSender;
 use pocketmine\utils\TextFormat;
+Use pocketmine\Server;
 
 final class CreateSubCommand extends BaseSubCommand
 {
@@ -61,7 +62,7 @@ final class CreateSubCommand extends BaseSubCommand
             return;
         }
 
-        if (!$this->getOwningPlugin()->getServer()->getWorldManager()->isWorldGenerated($world) || $lobby !== null && !$this->getOwningPlugin()->getServer()->getWorldManager()->isWorldGenerated($lobby)) {
+        if (!Server::getInstance()->getWorldManager()->isWorldGenerated($world) || $lobby !== null && !$this->getOwningPlugin()->getServer()->getWorldManager()->isWorldGenerated($lobby)) {
             $sender->sendMessage(TextFormat::RED . "There's no existing worlds with the name " . TextFormat::WHITE . $world);
             return;
         }
@@ -91,7 +92,7 @@ final class CreateSubCommand extends BaseSubCommand
             $directories[$this->getOwningPlugin()->getServer()->getDataPath() . "worlds" . DIRECTORY_SEPARATOR . $lobby] = $dataPath . DIRECTORY_SEPARATOR . GameData::GAME_DATA_LOBBY;
         }
 
-        $this->getOwningPlugin()->getServer()->getAsyncPool()->submitTask(new AsyncDirectoryClone($directories));
+        Server::getInstance()->getAsyncPool()->submitTask(new AsyncDirectoryClone($directories));
 
         $sender->sendMessage(TextFormat::GREEN . "Successfully created a map with the name " . TextFormat::WHITE . $name);
     }
