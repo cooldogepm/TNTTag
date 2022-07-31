@@ -30,6 +30,7 @@ declare(strict_types=1);
 namespace cooldogedev\TNTTag\utility;
 
 use cooldogedev\TNTTag\TNTTag;
+use cooldogedev\TNTTag\utility\message\LanguageManager;
 
 final class ConfigurationsValidator
 {
@@ -58,6 +59,8 @@ final class ConfigurationsValidator
             copy($plugin->getDataFolder() . $languageFile, $plugin->getDataFolder() . $languageFile . ".old");
             $plugin->saveResource($languageFile, true);
             $plugin->getLogger()->warning("Your language file is either outdated or corrupted (has no tokens). It has been backed up to " . $languageFile . ".old");
+
+            LanguageManager::init($plugin, $plugin->getConfig()->get("language"));
         }
     }
 

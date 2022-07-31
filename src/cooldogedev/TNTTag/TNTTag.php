@@ -81,7 +81,6 @@ final class TNTTag extends PluginBase
             $this->saveResource($resource->getFilename());
         }
 
-        ConfigurationsValidator::validate($this);
         TNTTag::setInstance($this);
     }
 
@@ -97,6 +96,7 @@ final class TNTTag extends PluginBase
 
         LanguageManager::init($this, $this->getConfig()->get("language"));
         QueryManager::setIsMySQL($this->getConfig()->get("database")["provider"] === ConnectionPool::DATA_PROVIDER_MYSQL);
+        ConfigurationsValidator::validate($this);
 
         $this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
 
