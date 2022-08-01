@@ -13,6 +13,7 @@
 - Game statistics
 - SQLite support
 - MySQL support
+
 ## Commands
 |    Command    |          Description          |         Permission         |
 |:-------------:|:-----------------------------:|:--------------------------:|
@@ -21,3 +22,9 @@
 |  tnttag list  | List all available arenas. |  `tnttag.subcommand.list`  |
 |  tnttag join  |    Join a game.    |  `tnttag.subcommand.join`  |
 |  tnttag quit  |    Quit a game.    |  `tnttag.subcommand.quit`  |
+
+## Arena creation
+### Usage
+`tnttag create <name:string> <world:string> <countdown:string> <min_players:string> <max_players:string> <round_duration:string> <grace_duration:string> <end_duration:string> [lobby:string]`
+### Example
+Example: `tnttag create test game-world 30 8 40 60 20 10 game-lobby`
