@@ -1,0 +1,137 @@
+---
+# Configuration version, don't edit this, this is a special token.
+### config-version: 0.0.2 ###
+
+# The messages that are displayed when a player joins/leaves a game.
+player:
+  join: "&7{player} &eđã tham gia! &e(&b{players_count}/{players_max}&e)"
+  quit: "&7{player} &eđã rời! &e(&b{players_count}/{players_max}&e)"
+
+# The messages that are displayed to players when they lose.
+lose:
+  title: "&c&lBẠN ĐÃ CHẾT!"
+  subtitle: "&7Bạn bây giờ là một khán giả"
+  message: "&l&cBạn đã thua cuộc trong trò chơi"
+
+# The messages that are displayed to players when they win.
+win:
+  title: "&l&6CHIẾN THẮNG!"
+  subtitle: "&7Bạn là người sống sót cuối cùng"
+  message: "&l&aBạn đã giành chiến thắng trong trò chơi!"
+
+# The messages that are displayed to spectators when the game ends.
+end:
+  title: "&c&lTRÒ CHƠI KẾT THÚC!"
+  subtitle: "&7Bạn đã không chiến thắng lần này"
+  message: "&c&lTrò chơi kết thúc! Bạn đã không chiến thắng lần này"
+
+# The messages that are displayed to tagged players.
+tagged:
+  start: "&cBạn đã bắt đầu với tư cách là người được gắn thẻ!"
+  tagged: "&7{player} &eLÀ NÓ!"
+  explode: "&c{player} nổ tung"
+
+# The messages that are displayed to players in countdown phase.
+countdown:
+  start: "&eĐếm ngược đã bắt đầu!"
+  stop: "&eĐếm ngược đã dừng lại!"
+  decrement: "&eTrò chơi bắt đầu sau &c{countdown}"
+
+# The messages that are displayed to players when the game starts.
+start:
+  title: "&l&cCHẠY!"
+  subtitle: ""
+  message: "&eTrò chơi đã bắt đầu! &cCHẠY!"
+
+# The messages that are displayed to players in deathmatch phase.
+deathmatch:
+  title: ""
+  subtitle: "&eTrận đấu sinh tử đã bắt đầu!"
+  message: "&eTrận đấu sinh tử đã bắt đầu! &cCHẠY!"
+
+# The messages that are displayed to players when they fail to queue.
+queue-error:
+  message: "&cKhông có trò chơi nào vào lúc này, hãy thử lại sau."
+  kick: "&cHiện tại không có trò chơi nào, hãy thử lại sau."
+
+# The goals that are displayed to players in the scoreboard.
+goals:
+  runner: "Chạy trốn!"
+  tagged: "Gán thẻ cho ai đó!"
+  none: "N/A"
+
+# The command's information.
+command:
+  name: "tnttag"
+  aliases: ["tt"]
+  description: "TNT Tag"
+
+# The custom item names for the hotbar.
+items:
+  quit-game: "&r&cThoát khỏi trò chơi"
+
+  teleporter: "&r&l&aDịch chuyển"
+  play-again: "&r&l&bChơi lại"
+  back-to-lobby: "&r&l&cQuay lại tiền sảnh"
+
+# The formats of the messages that are displayed to players.
+chat:
+  alive: "&7{player}: &f{message}"
+  spectator: "&7[KHÁN GIẢ] {player}: {message}"
+
+# The scoreboard messages.
+scoreboard:
+  title: "&l&eTNTTAG"
+  body:
+    idle:
+      - ""
+      - "Bản đồ: &a{map}"
+      - ""
+      - "Người chơi: &a{players_count}"
+      - ""
+      - "Đang chờ người chơi..."
+      - ""
+      - "&ewww.fadhel.dev"
+    countdown:
+      - ""
+      - "Bản đồ: &a{map}"
+      - ""
+      - "Người chơi: &a{players_count}"
+      - ""
+      - "Bắt đầu sau &a{countdown}s"
+      - ""
+      - "&ewww.fadhel.dev"
+    match:
+      - ""
+      - "&7Vòng #{round}"
+      - ""
+      - "Phát nổ sau &c{explosion}s"
+      - ""
+      - "Mục tiêu: &a{goal}"
+      - ""
+      - "Còn sống: &a{players_count} Người chơi"
+      - ""
+      - "&ewww.fadhel.dev"
+    grace:
+      - ""
+      - "&7Vòng #{round}"
+      - ""
+      - "Vòng tiếp theo sau &a{grace}s"
+      - ""
+      - "Mục tiêu: &a{goal}"
+      - ""
+      - "Còn sống: &a{players_count} Người chơi"
+      - ""
+      - "&ewww.fadhel.dev"
+    end:
+      - ""
+      - "&7Vòng #{total_rounds}"
+      - ""
+      - "Kết thúc sau &a{end}s"
+      - ""
+      - "Người chiến thắng: &6{winner}"
+      - ""
+      - "Bản đồ: &a{map}"
+      - ""
+      - "&ewww.fadhel.dev"
+...
