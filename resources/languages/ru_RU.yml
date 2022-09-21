@@ -1,0 +1,137 @@
+---
+# Configuration version, don't edit this, this is a special token.
+### config-version: 0.0.4 ###
+
+# The messages that are displayed when a player joins/leaves a game.
+player:
+  join: "&7{player} &eприсоединился! &e(&b{players_count}/{players_max}&e)"
+  quit: "&7{player} &eпокинул игру! &e(&b{players_count}/{players_max}&e)"
+
+# The messages that are displayed to players when they lose.
+lose:
+  title: "&c&lВЫ УМЕРЛИ!"
+  subtitle: "&7Вы теперь зритель"
+  message: "&l&cВы проиграли игру"
+
+# The messages that are displayed to players when they win.
+win:
+  title: "&l&6ПОБЕДА!"
+  subtitle: "&7Ты последний выживший"
+  message: "&l&aВы выиграли игру!"
+
+# The messages that are displayed to spectators when the game ends.
+end:
+  title: "&c&lИГРА ЗАКОНЧЕНА!"
+  subtitle: "&7Вы не выиграли на этот раз"
+  message: "&c&lИгра закончена! Вы не выиграли на этот раз"
+
+# The messages that are displayed to tagged players.
+tagged:
+  start: "&cВы начали как отмеченный!"
+  tagged: "&7{player} &eВОТ ЭТО!"
+  explode: "&c{player} взорваться"
+
+# The messages that are displayed to players in countdown phase.
+countdown:
+  start: "&eОбратный отсчет начался!"
+  stop: "&eОбратный отсчет остановлен!"
+  decrement: "&eИгра начнется через &c{countdown}"
+
+# The messages that are displayed to players when the game starts.
+start:
+  title: "&l&cБЕГИ!"
+  subtitle: ""
+  message: "&eИгра началась! &cБЕГИ!"
+
+# The messages that are displayed to players in deathmatch phase.
+deathmatch:
+  title: ""
+  subtitle: "&eСмертельный бой начался!"
+  message: "&eСмертельный бой начался! &cБЕГИ!"
+
+# The messages that are displayed to players when they fail to queue.
+queue-error:
+  message: "&cНа данный момент нет доступных игр, повторите попытку позже."
+  kick: "&cНа данный момент нет доступных игр, повторите попытку позже."
+
+# The goals that are displayed to players in the scoreboard.
+goals:
+  runner: "Убегать!"
+  tagged: "Ударить кого-нибудь!"
+  none: "N/A"
+
+# The command's information.
+command:
+  name: "tnttag"
+  aliases: ["tt"]
+  description: "TNT Tag"
+
+# The custom item names for the hotbar.
+items:
+  quit-game: "&r&cВыйти из игры"
+
+  teleporter: "&r&l&aТелепорт"
+  play-again: "&r&l&bИграть снова"
+  back-to-lobby: "&r&l&cНазад в лобби"
+
+# The formats of the messages that are displayed to players.
+chat:
+  alive: "&7{player}: &f{message}"
+  spectator: "&7[ЗРИТЕЛЬ] {player}: {message}"
+
+# The scoreboard messages.
+scoreboard:
+  title: "&l&eTNTTAG"
+  body:
+    idle:
+      - ""
+      - "Карта: &a{map}"
+      - ""
+      - "Игроков: &a{players_count}"
+      - ""
+      - "В ожидании игроков..."
+      - ""
+      - "&ewww.fadhel.dev"
+    countdown:
+      - ""
+      - "Карта: &a{map}"
+      - ""
+      - "Игроков: &a{players_count}"
+      - ""
+      - "Старт через &a{countdown}s"
+      - ""
+      - "&ewww.fadhel.dev"
+    match:
+      - ""
+      - "&7Раун #{round}"
+      - ""
+      - "Взрыв чере &c{explosion}s"
+      - ""
+      - "Цель: &a{goal}"
+      - ""
+      - "В живых: &a{players_count} Игроков"
+      - ""
+      - "&ewww.fadhel.dev"
+    grace:
+      - ""
+      - "&7Раун #{round}"
+      - ""
+      - "Следующий раунд через &a{grace}s"
+      - ""
+      - "Цель: &a{goal}"
+      - ""
+      - "В живых: &a{players_count} Игроков"
+      - ""
+      - "&ewww.fadhel.dev"
+    end:
+      - ""
+      - "&7Раун #{total_rounds}"
+      - ""
+      - "Конец через &a{end}s"
+      - ""
+      - "Победитель: &6{winner}"
+      - ""
+      - "Карта: &a{map}"
+      - ""
+      - "&ewww.fadhel.dev"
+...

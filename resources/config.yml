@@ -2,7 +2,7 @@
 # Configuration version, don't edit this.
 config-version: 0.0.4
 
-# Available languages: en-US (English), vi-VN (Vietnamese)
+# Available languages: en-US (English), vi-VN (Vietnamese), ru_RU (Russian), uk_UA (Ukrainian)
 language: en-US
 
 database:
