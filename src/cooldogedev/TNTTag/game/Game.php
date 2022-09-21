@@ -262,8 +262,8 @@ final class Game
             return;
         }
 
-        $this->getHandler()?->handleTicking();
         $this->getHandler()?->handleScoreboardUpdates();
+        $this->getHandler()?->handleTicking();
     }
 
     public function broadcastTitle(string $message, string $subtitle = "", array $replacement = [], ?int $mode = null, int $fadeIn = 5, int $stay = 20, int $fadeOut = 5): void
